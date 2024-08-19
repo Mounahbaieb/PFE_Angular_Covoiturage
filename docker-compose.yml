@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: angularpfe
+    container_name: covoiangular
+    ports:
+      - "8087:80"
+      
+
+  backend:
+    image: covoiturageback
+    container_name: covoiback
+    ports:
+      - "9009:8080"
+    environment:
+      MYSQL_HOST: mysqlpfe 
+      MYSQL_PORT: 3306
+      MYSQL_DB_NAME: covoiturage
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+
+  
+
+networks:
+  default:
+    external:
+      name: mysqlnetwork  # Use the existing network
