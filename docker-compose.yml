@@ -1,28 +1,32 @@
 version: '3.8'
-
 services:
   frontend:
-    image: angularpfe
-    container_name: covoiangular
+    image: mounahbaieb/appfrontpfe:latest
+    container_name: angularpfecontainer
     ports:
       - "8087:80"
-      
-
+    environment:
+      MYSQL_HOST: mysqlpfecontainer
   backend:
-    image: covoiturageback
-    container_name: covoiback
+    image: mounahbaieb/appbackpfe:latest
+    container_name: backpfecontainer
     ports:
       - "9009:8080"
     environment:
-      MYSQL_HOST: mysqlpfe 
+      MYSQL_HOST: mysqlpfecontainer
       MYSQL_PORT: 3306
       MYSQL_DB_NAME: covoiturage
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-
-  
-
+  mysql:
+    image: mysql:5.7
+    container_name: mysqlpfecontainer
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: covoiturage
 networks:
   default:
     external:
-      name: mysqlnetwork  # Use the existing network
+      name: mysqlnetwork
