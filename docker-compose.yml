@@ -1,14 +1,14 @@
 version: '3.8'
 services:
   frontend:
-    image: mounahbaieb/appfrontpfe:latest
+    image: mounahbaieb/newappfront:latest
     container_name: angularpfecontainer
     ports:
       - "8087:80"
     environment:
       MYSQL_HOST: mysqlpfecontainer
   backend:
-    image: mounahbaieb/appbackpfe:latest
+    image: mounahbaieb/newappback:latest
     container_name: backpfecontainer
     ports:
       - "9009:8080"
