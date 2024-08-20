@@ -10,11 +10,11 @@ import { Voiture } from 'src/app/model/Voiture';
   providedIn: 'root'
 })
 export class AnnoncesService {
-  private url = 'http://localhost:9009/api/annonces';
-  private urletat = 'http://localhost:9009/api/annonces/etat';
+  private url = 'http://44.198.44.164:9009/api/annonces';
+  private urletat = 'http://44.198.44.164:9009/api/annonces/etat';
 
-  private conducteurUrl = 'http://localhost:9009/api/conducteurs';
-  private voitureUrl = 'http://localhost:9009/api/voitures';
+  private conducteurUrl = 'http://44.198.44.164:9009/api/conducteurs';
+  private voitureUrl = 'http://44.198.44.164:9009/api/voitures';
 
   constructor(private http: HttpClient) {}
 

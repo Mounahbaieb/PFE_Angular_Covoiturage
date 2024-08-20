@@ -10,12 +10,12 @@ export class VoitureService {
 
   constructor(private http:HttpClient) { }
   saveCarInfo(carData: any): Observable<any> {
-    return this.http.post<any>(`http://localhost:9009/api/voitures`, carData);
+    return this.http.post<any>(`http://44.198.44.164:9009/api/voitures`, carData);
   }
   getVoitureById(id: string): Observable<Voiture> {
-    return this.http.get<Voiture>(`http://localhost:9009/api/voitures/${id}`);
+    return this.http.get<Voiture>(`http://44.198.44.164:9009/api/voitures/${id}`);
   }
   editVoiture(data: any, id: string): Observable<any> {
-    return this.http.put(`http://localhost:9009/api/voitures/${id}`, data);
+    return this.http.put(`http://44.198.44.164:9009/api/voitures/${id}`, data);
   }
 }

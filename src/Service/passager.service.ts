@@ -8,11 +8,11 @@ import { Passager } from 'src/app/model/Passager';
 })
 export class PassagerService {
 
-  private api = 'http://localhost:9009/api/passagers';
+  private api = 'http://44.198.44.164:9009/api/passagers';
 
   constructor(private http: HttpClient) {} 
    createPassager(passager: any): Observable<Passager> {
-    return this.http.post<Passager>('http://localhost:9009/api/passagers', passager);
+    return this.http.post<Passager>('http://44.198.44.164:9009/api/passagers', passager);
   }
   getAllPassagers(): Observable<Passager[]> {
     return this.http.get<Passager[]>(this.api);
