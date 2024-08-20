@@ -1,26 +1,26 @@
 version: '3.8'
 services:
   frontend:
-    image: mounahbaieb/newappfront:latest
-    container_name: angularpfecontainer
+    image: mounahbaieb/angularpfe:latest
+    container_name: pfecontainernewangular
     ports:
       - "8087:80"
     environment:
-      MYSQL_HOST: mysqlpfecontainer
+      MYSQL_HOST: pfecontainermysql
   backend:
-    image: mounahbaieb/newappback:latest
-    container_name: backpfecontainer
+    image: mounahbaieb/backpfe:latest
+    container_name: pfecontainernewback
     ports:
       - "9009:8080"
     environment:
-      MYSQL_HOST: mysqlpfecontainer
+      MYSQL_HOST: pfecontainermysql
       MYSQL_PORT: 3306
       MYSQL_DB_NAME: covoiturage
       MYSQL_USER: root
       MYSQL_PASSWORD: root
   mysql:
     image: mysql:5.7
-    container_name: mysqlpfecontainer
+    container_name: pfecontainermysql
     ports:
       - "3306:3306"
     environment:
