@@ -8,9 +8,9 @@ import { Conducteur } from 'src/app/model/Conducteur';
 })
 export class ConducteurService {
 
-  private apiUrl = 'http://44.198.44.164:9009/api/conducteurs/signup';
+  private apiUrl = 'http://44.198.44.164:30008/api/conducteurs/signup';
 
-  private api = 'http://44.198.44.164:9009/api/conducteurs';
+  private api = 'http://44.198.44.164:30008/api/conducteurs';
 
   constructor(private http: HttpClient) {}
 
@@ -26,18 +26,18 @@ export class ConducteurService {
   }
 
 getConducteurById(id: string): Observable<Conducteur> {
-  return this.http.get<Conducteur>(`http://44.198.44.164:9009/api/conducteurs/${id}`);
+  return this.http.get<Conducteur>(`http://44.198.44.164:30008/api/conducteurs/${id}`);
 }
 
   createConducteur(conducteur: Conducteur): Observable<Conducteur> {
     return this.http.post<Conducteur>(this.apiUrl, conducteur);
   }
   editConducteur(data: any, id: string): Observable<any> {
-    return this.http.put(`http://44.198.44.164:9009/api/conducteurs/${id}`, data);
+    return this.http.put(`http://44.198.44.164:30008/api/conducteurs/${id}`, data);
   }
 
   save(form: any): Observable<any> {
-    return this.http.post<any>('http://44.198.44.164:9009/api/conducteurs', form);
+    return this.http.post<any>('http://44.198.44.164:30008/api/conducteurs', form);
   }
 
 
