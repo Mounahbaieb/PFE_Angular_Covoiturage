@@ -7,10 +7,10 @@ import { Administrateur } from 'src/app/model/Administrateur';
   providedIn: 'root'
 })
 export class SousAdminService {
-  private apiUrl = 'http://44.198.44.164:9009/api/administrateurs/signup';
+  private apiUrl = 'http://44.198.44.164:30008/api/administrateurs/signup';
 
-  private api = 'http://44.198.44.164:9009/api/administrateurs/login';
-  private url = 'http://44.198.44.164:9009/api/administrateurs';
+  private api = 'http://44.198.44.164:30008/api/administrateurs/login';
+  private url = 'http://44.198.44.164:30008/api/administrateurs';
 
 
   constructor(private http: HttpClient) {}
@@ -23,18 +23,18 @@ export class SousAdminService {
   }
 
 getSousAdminById(id: string): Observable<Administrateur> {
-  return this.http.get<Administrateur>(`http://44.198.44.164:9009/api/administrateurs/${id}`);
+  return this.http.get<Administrateur>(`http://44.198.44.164:30008/api/administrateurs/${id}`);
 }
 
   createSousAdmin(SousAdmin: Administrateur): Observable<Administrateur> {
     return this.http.post<Administrateur>(this.apiUrl, SousAdmin);
   }
   editSousAdmin(data: any, id: string): Observable<any> {
-    return this.http.put(`http://44.198.44.164:9009/api/administrateurs/${id}`, data);
+    return this.http.put(`http://44.198.44.164:30008/api/administrateurs/${id}`, data);
   }
 
   save(form: any): Observable<any> {
-    return this.http.post<any>('http://44.198.44.164:9009/api/administrateurs', form);
+    return this.http.post<any>('http://44.198.44.164:30008/api/administrateurs', form);
   }
 
 
